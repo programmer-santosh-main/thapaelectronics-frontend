@@ -96,9 +96,7 @@ export default function LoginRegister() {
     window.location.href = `${backendUrl}/api/auth/google`;
   };
 
-  const handleFacebookLogin = () => {
-    window.location.href = `${backendUrl}/api/auth/facebook`;
-  };
+  
 
   return (
     <>
@@ -180,202 +178,84 @@ export default function LoginRegister() {
           </div>
 
           {/* ✅ Social Buttons (Responsive) */}
+{/* ✅ Google Only Button (Responsive) */}
 <div className="mb-6">
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-    {/* Google Button with Enhanced Animation */}
-    <motion.button
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 0.1, duration: 0.3, type: "spring" }}
-      whileHover={{ 
-        scale: 1.02, 
-        y: -2,
-        boxShadow: "0 10px 25px -5px rgba(66, 133, 244, 0.3)"
-      }}
-      whileTap={{ scale: 0.98 }}
-      type="button"
-      onClick={handleGoogleLogin}
-      className="relative w-full group overflow-hidden bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 border border-emerald-800/30 hover:border-blue-500 rounded-xl p-3 text-white transition-all duration-300"
-    >
-      {/* Animated Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-500/10 to-blue-600/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-      
-      <span className="relative z-10 flex items-center justify-center gap-2 font-semibold">
-        <motion.div
-          whileHover={{ rotate: 360 }}
-          transition={{ duration: 0.5, type: "spring" }}
-          className="relative"
+  <motion.button
+    initial={{ scale: 0.95, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 0.35, type: "spring" }}
+    whileHover={{
+      scale: 1.02,
+      y: -2,
+      boxShadow: "0 10px 25px -5px rgba(66, 133, 244, 0.25)",
+    }}
+    whileTap={{ scale: 0.98 }}
+    type="button"
+    onClick={handleGoogleLogin}
+    className="relative w-full overflow-hidden rounded-xl border border-emerald-800/30 bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-gray-800/90 p-3.5 text-white transition-all duration-300 hover:border-blue-500/70"
+  >
+    {/* subtle shine */}
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 translate-x-[-120%] hover:translate-x-[120%] transition-transform duration-1000" />
+
+    <span className="relative z-10 flex w-full items-center justify-center gap-3">
+      {/* Google icon */}
+      <span className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 border border-white/10">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+          className="shrink-0"
         >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 48 48"
-            xmlns="http://www.w3.org/2000/svg"
-            className="shrink-0"
-          >
-            <path
-              fill="#FFC107"
-              d="M43.611 20.083H42V20H24v8h11.303C33.816 32.654 29.268 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.957 3.043l5.657-5.657C34.047 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"
-            />
-            <path
-              fill="#FF3D00"
-              d="M6.306 14.691l6.571 4.819C14.655 16.108 19.01 12 24 12c3.059 0 5.842 1.154 7.957 3.043l5.657-5.657C34.047 6.053 29.268 4 24 4c-7.682 0-14.356 4.328-17.694 10.691z"
-            />
-            <path
-              fill="#4CAF50"
-              d="M24 44c5.166 0 9.86-1.977 13.409-5.197l-6.19-5.238C29.191 35.091 26.715 36 24 36c-5.246 0-9.78-3.321-11.288-7.946l-6.52 5.025C9.505 39.556 16.227 44 24 44z"
-            />
-            <path
-              fill="#1976D2"
-              d="M43.611 20.083H42V20H24v8h11.303a12.09 12.09 0 0 1-4.086 5.565l.003-.002 6.19 5.238C36.971 39.201 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"
-            />
-          </svg>
-          {/* Glow Effect */}
-          <div className="absolute inset-0 bg-blue-500/20 blur-md group-hover:blur-lg transition-all duration-300 rounded-full" />
-        </motion.div>
-        <span className="bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent group-hover:from-white group-hover:to-blue-100 transition-all duration-300">
+          <path
+            fill="#FFC107"
+            d="M43.611 20.083H42V20H24v8h11.303C33.816 32.654 29.268 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.957 3.043l5.657-5.657C34.047 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"
+          />
+          <path
+            fill="#FF3D00"
+            d="M6.306 14.691l6.571 4.819C14.655 16.108 19.01 12 24 12c3.059 0 5.842 1.154 7.957 3.043l5.657-5.657C34.047 6.053 29.268 4 24 4c-7.682 0-14.356 4.328-17.694 10.691z"
+          />
+          <path
+            fill="#4CAF50"
+            d="M24 44c5.166 0 9.86-1.977 13.409-5.197l-6.19-5.238C29.191 35.091 26.715 36 24 36c-5.246 0-9.78-3.321-11.288-7.946l-6.52 5.025C9.505 39.556 16.227 44 24 44z"
+          />
+          <path
+            fill="#1976D2"
+            d="M43.611 20.083H42V20H24v8h11.303a12.09 12.09 0 0 1-4.086 5.565l.003-.002 6.19 5.238C36.971 39.201 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"
+          />
+        </svg>
+      </span>
+
+      {/* Text */}
+      <span className="flex flex-col items-start">
+        <span className="text-sm sm:text-base font-semibold leading-tight">
           Sign in with Google
         </span>
-      </span>
-      
-      {/* Floating Particles */}
-      {[...Array(3)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-white/30 rounded-full"
-          initial={{ 
-            x: -10, 
-            y: Math.random() * 40,
-            opacity: 0 
-          }}
-          animate={{ 
-            x: "100%", 
-            y: Math.random() * 40,
-            opacity: [0, 1, 0]
-          }}
-          transition={{
-            duration: 2,
-            delay: i * 0.3,
-            repeat: Infinity,
-            repeatDelay: 2
-          }}
-        />
-      ))}
-    </motion.button>
-
-    {/* Facebook Button with Enhanced Animation */}
-    <motion.button
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.3, type: "spring" }}
-      whileHover={{ 
-        scale: 1.02, 
-        y: -2,
-        boxShadow: "0 10px 25px -5px rgba(24, 119, 242, 0.3)"
-      }}
-      whileTap={{ scale: 0.98 }}
-      type="button"
-      onClick={handleFacebookLogin}
-      className="relative w-full group overflow-hidden bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 border border-teal-800/30 hover:border-blue-600 rounded-xl p-3 text-white transition-all duration-300"
-    >
-      {/* Animated Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-700/0 via-blue-600/10 to-blue-700/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-      
-      <span className="relative z-10 flex items-center justify-center gap-2 font-semibold">
-        <motion.div
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          transition={{ duration: 0.3, type: "spring" }}
-          className="relative"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            className="shrink-0"
-          >
-            <path
-              fill="#1877F2"
-              d="M22 12.06C22 6.504 17.523 2 12 2S2 6.504 2 12.06C2 17.08 5.657 21.22 10.438 22v-7.03H7.898v-2.91h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.196 2.238.196v2.46h-1.26c-1.243 0-1.63.776-1.63 1.57v1.88h2.773l-.443 2.91h-2.33V22C18.343 21.22 22 17.08 22 12.06Z"
-            />
-            <path
-              fill="#fff"
-              d="M15.893 14.97l.443-2.91h-2.773v-1.88c0-.794.387-1.57 1.63-1.57h1.26v-2.46s-1.144-.196-2.238-.196c-2.285 0-3.777 1.384-3.777 3.89v2.215h-2.54v2.91h2.54V22a10.08 10.08 0 0 0 3.125 0v-7.03h2.33Z"
-            />
-          </svg>
-          {/* Glow Effect */}
-          <div className="absolute inset-0 bg-blue-600/20 blur-md group-hover:blur-lg transition-all duration-300 rounded-full" />
-        </motion.div>
-        <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent group-hover:from-white group-hover:to-blue-100 transition-all duration-300">
-          Sign in with Facebook
+        <span className="text-[11px] sm:text-xs text-emerald-200/60 leading-tight">
+          Fast & secure login
         </span>
       </span>
-      
-      {/* Pulse Animation */}
-      <motion.div
-        className="absolute inset-0 border-2 border-blue-500/30 rounded-xl"
-        initial={{ scale: 1, opacity: 0 }}
-        animate={{ 
-          scale: [1, 1.05, 1],
-          opacity: [0, 0.5, 0]
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatDelay: 1
-        }}
-      />
-      
-      {/* Floating Particles */}
-      {[...Array(3)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-white/30 rounded-full"
-          initial={{ 
-            x: -10, 
-            y: Math.random() * 40,
-            opacity: 0 
-          }}
-          animate={{ 
-            x: "100%", 
-            y: Math.random() * 40,
-            opacity: [0, 1, 0]
-          }}
-          transition={{
-            duration: 2,
-            delay: i * 0.3 + 0.5,
-            repeat: Infinity,
-            repeatDelay: 2
-          }}
-        />
-      ))}
-    </motion.button>
-  </div>
 
-  {/* Enhanced Divider */}
-  <motion.div 
-    initial={{ scaleX: 0 }}
-    animate={{ scaleX: 1 }}
-    transition={{ delay: 0.3, duration: 0.5 }}
-    className="flex items-center gap-3 my-5"
-  >
+      {/* spacer */}
+      <span className="flex-1" />
+
+      {/* arrow / hint */}
+      <span className="text-xs sm:text-sm text-emerald-200/70">
+        Continue →
+      </span>
+    </span>
+  </motion.button>
+
+  {/* Divider */}
+  <div className="flex items-center gap-3 my-5">
     <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
-    <motion.span 
-      animate={{ 
-        scale: [1, 1.1, 1],
-        opacity: [0.5, 1, 0.5]
-      }}
-      transition={{ 
-        duration: 2, 
-        repeat: Infinity 
-      }}
-      className="text-xs text-emerald-300 whitespace-nowrap px-3 py-1 rounded-full bg-emerald-900/20"
-    >
+    <span className="text-xs text-emerald-300 whitespace-nowrap px-3 py-1 rounded-full bg-emerald-900/20">
       OR CONTINUE WITH
-    </motion.span>
+    </span>
     <div className="h-px w-full bg-gradient-to-l from-transparent via-teal-500/30 to-transparent" />
-  </motion.div>
+  </div>
 </div>
+
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
