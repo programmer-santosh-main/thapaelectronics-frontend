@@ -9,16 +9,15 @@ export default function OAuthSuccess() {
     const token = params.get("token");
 
     if (token) {
-      // SAME token you already use after normal login
-      localStorage.setItem("token", token);
+  // store token
+  localStorage.setItem("token", token);
 
-      // Optional: clean URL
-      window.history.replaceState({}, document.title, "/oauth-success");
+  // force full reload to home page
+  window.location.href = "/";
+} else {
+  navigate("/login");
+}
 
-      navigate("/");
-    } else {
-      navigate("/login");
-    }
   }, [navigate]);
 
   return <p>Signing you in...</p>;
