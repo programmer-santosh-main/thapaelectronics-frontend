@@ -1,0 +1,7 @@
+# robots.txt for ecom.santoshthapa0.com.np
+
+User-agent: *
+Allow: /
+
+Sitemap: https://thapaelectronics.com/sitemap.xml
+Host: thapaelectronics.com
