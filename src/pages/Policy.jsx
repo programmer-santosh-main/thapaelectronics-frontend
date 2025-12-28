@@ -386,7 +386,7 @@ export default function Policy() {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email Support",
-      details: ["support@techstore.com", "technical@techstore.com"],
+      details: ["info@santoshthapa0.com.np"],
       responseTime: "Within 12 hours",
     },
     {
