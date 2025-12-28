@@ -692,7 +692,7 @@ export default function Policy() {
                 By purchasing from our electronics store, you acknowledge that you have read, understood, and agree to be bound by these policies.
               </p>
               <p className="text-sm text-gray-500">
-                © 2025 TechStore Nepal. All rights reserved. Your trusted electronics partner.
+                © 2025 Thapa Electronics Nepal. All rights reserved. Your trusted electronics partner.
               </p>
             </div>
           </div>
