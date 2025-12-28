@@ -170,8 +170,8 @@ export default function Checkout() {
     if (!userInfo.city.trim()) newErrors.city = "City is required";
     
     // Phone validation for Nepal
-    if (userInfo.phone && !/^98[0-9]{8}$/.test(userInfo.phone)) {
-      newErrors.phone = "Enter a valid Nepali phone number (98XXXXXXXX)";
+    if (userInfo.phone && !/^9[0-9]{8}$/.test(userInfo.phone)) {
+      newErrors.phone = "Enter a valid Nepali phone number (9XXXXXXXXX)";
     }
     
     // Email validation
